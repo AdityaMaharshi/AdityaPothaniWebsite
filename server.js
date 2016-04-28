@@ -1,4 +1,4 @@
-var Botkit = require('botkit)
+var Botkit = require('botkit')
 
 var accessToken = process.enc.FACEBOOK_PAGE_ACCESS_TOKEN
 var verifyToken = process.env.FACEBOOK_VERIFY_TOKEN
@@ -13,7 +13,7 @@ var controller = Botkit.facebookbot({
 	verify_token: verifyToken
 })
 
-var bot =controller.spawn()
+var bot = controller.spawn()
 controller.setupWebserver(port, function(err, webserver)){
 	if (err) return console.log(err)
 	controller.createWebhookEndpoints(webserver, bot, function(){
@@ -34,7 +34,7 @@ controller.hears(['hello','hi'],'message_received', function (bot, message){
 				buttons:[
 					{
 						type: 'postback',
-						title: 'Whats the Weather'
+						title: 'Whats the Weather',
 						payload: 'weather'
 					},
 					{
